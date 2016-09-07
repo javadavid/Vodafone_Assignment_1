@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="12" time="0.532836">
+<testcase classname="Creates/Add new Customer Data" name="Create a new customer data" time="0.413768">
+<system-out><![CDATA[Given The Server URL "http://localhost:8080/VodafoneWebService/rest/customers/add/".passed
+Given create a new customer with name "Andrei", address "20 Viaduct Harbour Ave, Auckland 1010" and phone "093552000".passed
+When the client sends the POST request......................................passed
+Then the client should obtain the following message.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Creates/Add new Customer Data" name="Create a new customer data with the an existing customer name" time="0.004326">
+<system-out><![CDATA[Given The Server URL "http://localhost:8080/VodafoneWebService/rest/customers/add/".passed
+Given create a new customer with name "Andrei", address "20 Viaduct Harbour Ave, Auckland 1010" and phone "093552000".passed
+When the client sends the POST request......................................passed
+Then the client should obtain the following message.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Creates/Add new Customer Data" name="Create a new customer data without customer name" time="0.006111">
+<system-out><![CDATA[Given The Server URL "http://localhost:8080/VodafoneWebService/rest/customers/add/".passed
+Given create a new customer with name "", address "20 Viaduct Harbour Ave, Auckland 1010" and phone "093552000".passed
+When the client sends the POST request......................................passed
+Then the client should obtain the following message.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Read Customer's Data" name="Read a specific customer data" time="0.034693">
+<system-out><![CDATA[Given The Server URL "http://localhost:8080/VodafoneWebService/rest/customers".passed
+Given A customer data exists with the name "Andrei".........................passed
+When the client sends the GET request with name "Andrei"....................passed
+Then the client should obtain the following JSON message....................passed
+]]></system-out>
+</testcase>
+<testcase classname="Read Customer's Data" name="Read all available customer data" time="0.018077">
+<system-out><![CDATA[Given The Server URL "http://localhost:8080/VodafoneWebService/rest/customers".passed
+Given A customer data exists with the name "Andrei".........................passed
+And A customer data exists with the name "Viswa"............................passed
+When the client sends the GET request.......................................passed
+Then the client should obtain the following JSON message....................passed
+]]></system-out>
+</testcase>
+<testcase classname="Read Customer's Data" name="Read a non existing customer data" time="0.011885">
+<system-out><![CDATA[Given The Server URL "http://localhost:8080/VodafoneWebService/rest/customers".passed
+Given A customer data does not exists with the name "no-customer"...........passed
+When the client sends the GET request with name "no-customer"...............passed
+Then the client should obtain the following JSON message....................passed
+]]></system-out>
+</testcase>
+<testcase classname="Update a Customer's Data" name="Update a customer data" time="0.006577">
+<system-out><![CDATA[Given The Server URL "http://localhost:8080/VodafoneWebService/rest/customers/modify".passed
+Given update a customer with name "Andrei", address "45B Hobson St, Auckland Central, 1010" and phone "93552000".passed
+When the client sends the PUT request.......................................passed
+Then the client should obtain the following message.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Update a Customer's Data" name="Update a non-existent customer data" time="0.00522">
+<system-out><![CDATA[Given The Server URL "http://localhost:8080/VodafoneWebService/rest/customers/modify".passed
+Given update a customer with name "non-exist-customer", address "45B Hobson St, Auckland Central, 1010" and phone "93552000".passed
+When the client sends the PUT request.......................................passed
+Then the client should obtain the following message.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Update a Customer's Data" name="Update a customer without customer name" time="0.00542">
+<system-out><![CDATA[Given The Server URL "http://localhost:8080/VodafoneWebService/rest/customers/modify".passed
+Given update a customer with name "", address "45B Hobson St, Auckland Central, 1010" and phone "93552000".passed
+When the client sends the PUT request.......................................passed
+Then the client should obtain the following message.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Delete the existing Customer Data" name="Delete an existing customer data" time="0.007822">
+<system-out><![CDATA[Given The Server URL "http://localhost:8080/VodafoneWebService/rest/customers".passed
+Given A customer data exists with the name "Andrei".........................passed
+When the client sends the DELETE request with name "Andrei".................passed
+Then the client should obtain the following message.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Delete the existing Customer Data" name="Delete a non-existing customer data" time="0.010869">
+<system-out><![CDATA[Given The Server URL "http://localhost:8080/VodafoneWebService/rest/customers".passed
+Given A customer data does not exists with the name "no-customer"...........passed
+When the client sends the DELETE request with name "no-customer"............passed
+Then the client should obtain the following message.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Delete the existing Customer Data" name="Delete all customer data" time="0.008068">
+<system-out><![CDATA[Given The Server URL "http://localhost:8080/VodafoneWebService/rest/customers".passed
+Given some customers exist in the data base.................................passed
+When the client sends the DELETE request....................................passed
+Then the client should obtain the following message.........................passed
+]]></system-out>
+</testcase>
+</testsuite>
